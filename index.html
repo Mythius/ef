@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Enchanted Forest</title>
+	<script src="helpers.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="input.js"></script>
+	<script src="audio.js"></script>
+	<script src="button.js"></script>
+	<script src="sprite.js"></script>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<game>
+		<canvas width=700 height=500></canvas>
+		<div id="players"></div>
+		<iframe src="rolldice.html?6.6" frameborder="0" width="500" height="200"></iframe>
+		<div id=win>Matthias</div>
+	</game>
+	<lobby>
+		<h1>Enchanted Forest</h1>
+		<main>
+			<button onclick="socket.emit('EF-newgame')">New Game</button>
+			<div id="games">
+				<p>Join a Game</p>
+				<hr>
+				<div id="people"></div>
+			</div>
+		</main>
+		<wait>
+			<colors>
+				<p style='color:white'>Choose your Color</p>
+				<div class="color" style="background-color:purple;"></div>
+				<div class="color" style="background-color:yellow;"></div>
+				<div class="color" style="background-color:green;"></div>
+				<div class="color" style="background-color:tan;"></div>
+				<div class="color" style="background-color:red;"></div>
+				<div class="color" style="background-color:blue;"></div>
+			</colors>
+			<peoplein></peoplein>
+			<req></req>
+		</wait>
+	</lobby>
+	<script src="main.js"></script>
+</body>
+</html>
