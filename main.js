@@ -420,6 +420,7 @@ const name = location.href.includes('?') ? decodeURI(location.href.split('?')[1]
 
     function setup(data) {
         setSeed(data.seed);
+		for(let i=0;i<5000;i++) pRandom();
         must_use_dice = !!+data.opts[1];
         clips = getClips(cards);
         clips = shuffle(clips);
