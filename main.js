@@ -396,7 +396,8 @@ const name = location.href.includes('?')?decodeURI(location.href.split('?')[1]):
 	}
 
 	function setup(data){
-		seed = data.seed;
+		setSeed(data.seed);
+		for(let i=0;i<1000;i++) pRandom();
 		must_use_dice = !!+data.opts[1];
 		clips = getClips(cards);
 		clips = clips.sort((a,b)=>pRandom()-.5);
